@@ -17,7 +17,7 @@ export const ERROR = {
   }
 }
 // if production use production url
-export const URL = process.env.NODE_ENV === 'production' ? 'https://podify.manutorres.dev' : 'http://localhost:5173/'
+export const URL = process.env.NODE_ENV === 'production' ? 'https://podify.manutorres.dev/' : 'http://localhost:5173/'
 
 export const SWRConfig = {
   revalidateOnFocus: false,
