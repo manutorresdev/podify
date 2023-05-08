@@ -1,14 +1,13 @@
 # Podify
 
-Esta aplicación es una Single Page Application (SPA) que permite a los usuarios escuchar podcasts musicales
+Esta aplicación es una Single Page Application (SPA) que permite a los usuarios filtrar y escuchar podcasts sobre música
 
 ## Descripción
 
-Podify permite filtrar los podcasts por título y autor en tiempo real, almacenando el listado de podcasts en cliente para evitar solicitudes innecesarias al servicio externo. Al pulsar sobre un podcast, el usuario es dirigido a una vista con detalles del mismo, donde se visualiza el título del podcast, su descripción y un reproductor de audio para reproducir el podcast.
+Podify permite filtrar los podcasts por título y autor en tiempo real. Al pulsar sobre un podcast, el usuario es dirigido a una vista con detalles del mismo, donde se visualiza el título del podcast, su descripción y un reproductor de audio para reproducir los episodios del podcast.
 
 ### Notas
 
-* La aplicación está desarrollada con React y Vite, utilizando React-router-dom para la navegación entre vistas y Swr para la gestión de la caché de los podcasts
 ```diff
 - Algunas peticiones a la api de itunes se bloquean por CORS
 ```
