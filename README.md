@@ -6,6 +6,11 @@ Esta aplicación es una Single Page Application (SPA) que permite a los usuarios
 
 Podify permite filtrar los podcasts por título y autor en tiempo real, almacenando el listado de podcasts en cliente para evitar solicitudes innecesarias al servicio externo. Al pulsar sobre un podcast, el usuario es dirigido a una vista con detalles del mismo, donde se visualiza el título del podcast, su descripción y un reproductor de audio para reproducir el podcast.
 
+### Notas
+
+* La aplicación está desarrollada con React y Vite, utilizando React-router-dom para la navegación entre vistas y Swr para la gestión de la caché de los podcasts
+* <span style="color: FF6969">Algunas peticiones a la api de itunes estan bloqueadas por CORS</span>
+
 ### Dependencias y librerías
 - Creado con **Node V18.16.0**
 
