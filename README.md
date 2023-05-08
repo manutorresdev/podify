@@ -10,7 +10,7 @@ Podify permite filtrar los podcasts por título y autor en tiempo real, almacena
 
 * La aplicación está desarrollada con React y Vite, utilizando React-router-dom para la navegación entre vistas y Swr para la gestión de la caché de los podcasts
 ```diff
-- Algunas peticiones a la api de itunes se bloquean por CORS al intentar acceder a los datos más de 10 veces en un minuto
+- Algunas peticiones a la api de itunes se bloquean por CORS
 ```
 
 ### Dependencias y librerías
