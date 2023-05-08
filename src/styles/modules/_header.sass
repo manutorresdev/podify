@@ -1,0 +1,21 @@
+@use '../abstracts/variables'
+
+header
+    width: 100%
+    // padding: 0px 12px
+    // padding-top: 28px
+    display: flex
+    flex-direction: column
+    height: 120px
+    padding-top: 20px
+    justify-content: space-between
+    align-items: center
+
+@media (min-width: variables.$breakpoint-smaller)
+    header
+        flex-direction: row
+        height: 60px
+        padding-top: 0px
+
+.h-50
+    height: 50px

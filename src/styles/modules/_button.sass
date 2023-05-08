@@ -1,0 +1,21 @@
+@use '../abstracts/variables'
+
+button,.button
+    background-color: variables.$color-primary
+    border: none
+    text-decoration: none
+    border-radius: 10px
+    color: variables.$color-secondary
+    cursor: pointer
+    font-weight: 700
+    padding: 10px 20px
+    transition: background-color 0.3s ease-in-out
+    &:hover
+        background-color: darken(variables.$color-primary, 15%)
+    &:focus
+        outline: none
+    &:disabled
+        background-color: variables.$color-secondary
+        cursor: not-allowed
+        &:hover
+            background-color: variables.$color-secondary

@@ -1,0 +1,19 @@
+@use '../abstracts/variables'
+
+.not-found-search
+    background-color: darken(variables.$color-secondary, 2%)
+    border-radius: 10px
+    color: variables.$color-tertiary
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 20px
+    text-align: center
+    transition: background-color 0.3s ease-in-out
+    margin: 0 auto
+    h2
+        color: variables.$color-primary
+
+@media screen and (min-width: variables.$breakpoint-smaller)
+    .not-found-search
+        width: 30rem

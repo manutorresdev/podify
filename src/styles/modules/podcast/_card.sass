@@ -1,0 +1,33 @@
+@use '../../abstracts/variables'
+
+.podcast-card
+    background-color: darken(variables.$color-secondary, 2%)
+    border-radius: 10px
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+    color: variables.$color-tertiary
+    display: flex
+    flex-direction: column
+    padding: 20px
+    cursor: pointer
+    transition: background-color 0.3s ease-in-out
+    width: 182px
+    text-decoration: none
+    &:hover
+        background-color: darken(variables.$color-secondary, 8%)
+    img
+        border-radius: 5px
+        width: 200px
+        align-self: center
+        max-width: 100%
+    h3
+        color: variables.$color-primary
+        font-weight: bold
+        font-size: 16px
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+
+    p
+        font-size: 14px
+        color: darken(variables.$color-tertiary, 20%)
+        margin: 0px

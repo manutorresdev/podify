@@ -1,0 +1,31 @@
+@use '../abstracts/variables'
+
+@font-face
+  font-family: 'Cabin'
+  src: url('/fonts/Cabin-Regular.ttf') format('truetype')
+
+:root
+  font-family: Cabin, sans-serif, system-ui
+  line-height: 1.5
+  font-weight: 400
+
+  color-scheme: dark
+  color: variables.$color-tertiary
+  background-color: variables.$color-secondary
+
+  font-synthesis: none
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  -webkit-text-size-adjust: 100%
+  // overflow-x: hidden
+
+html, #root
+  height: 100%
+
+.hide-half-text
+  max-height: 1.5em
+  overflow: hidden
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%)
+.pulse
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite

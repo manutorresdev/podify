@@ -1,0 +1,33 @@
+@use '../../abstracts/variables'
+@use '../../abstracts/animations'
+
+.podcast-list
+    h2
+        padding: 0px 12px
+    ul
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+        gap: 20px
+        list-style: none
+        place-items: center
+        padding: 0px
+
+#podcast-list-skeleton
+    .podcast-card
+        .img
+            height: 180px
+            width: 180px
+            border-radius: 5px
+            background-color: darken(variables.$color-secondary, 3%)
+        h3
+            height: 20px
+            width: 100%
+            background-color: darken(variables.$color-secondary, 3%)
+            margin-top: 10px
+        p
+            height: 20px
+            width: 100%
+            background-color: darken(variables.$color-secondary, 3%)
+            margin-top: 10px
+
+
