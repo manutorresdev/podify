@@ -18,20 +18,19 @@
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   -webkit-text-size-adjust: 100%
-  // overflow-x: hidden
 
 html, #root
   height: 100%
+  width: 100%
 
 .hide-half-text
   max-height: 1.5em
   overflow: hidden
-  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%)
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%)
 .pulse
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite
 .hide
   display: none
-
 .spinner
   width: 25px
   height: 25px
@@ -40,4 +39,3 @@ html, #root
   border-top-color: variables.$color-primary
   animation: spin 1s ease-in-out infinite
   align-self: center
-
