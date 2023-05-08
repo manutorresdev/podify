@@ -7,7 +7,7 @@ import ErrorPage from '@views/ErrorPage'
 import PodcastDetail from '@views/PodcastDetail'
 import '@styles/main.css'
 import { ERROR } from '@utils/constants.ts'
-import EpisodePage from '@views/EpisodeDetail'
+import EpisodeDetail from '@views/EpisodeDetail'
 
 const router = createBrowserRouter([
   {
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
   },
   {
     path: 'podcast/:podcastId/episode/:episodeId',
-    element: <EpisodePage />,
+    element: <EpisodeDetail />,
     errorElement: <ErrorPage />
   },
   {

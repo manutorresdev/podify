@@ -4,14 +4,10 @@ import useSWR from 'swr'
 import PodcastListSkeleton from '@components/podcast/loaders/PodcastListSkeleton'
 import ErrorCard from '@components/error/ErrorCard'
 import NotFoundSearch from '@components/layout/NotFoundSearch'
+import { SWRConfig } from '@utils/constants'
 
 interface Props {
   search: string;
-}
-
-const SWRConfig = {
-  revalidateOnFocus: false,
-  revalidateOnReconnect: false
 }
 
 export default function PodcastList (props: Props) {
