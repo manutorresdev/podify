@@ -30,6 +30,20 @@ html, #root {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+.hide {
+  display: none;
+}
+
+.spinner {
+  width: 25px;
+  height: 25px;
+  border: 3px solid #23222e;
+  border-radius: 50%;
+  border-top-color: #ff4057;
+  animation: spin 1s ease-in-out infinite;
+  align-self: center;
+}
+
 #container {
   width: 100%;
   max-width: 1200px;
@@ -77,6 +91,11 @@ html, #root {
   }
   50% {
     opacity: 0.5;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 .podcast-list h2 {

@@ -29,3 +29,15 @@ html, #root
   -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%)
 .pulse
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite
+.hide
+  display: none
+
+.spinner
+  width: 25px
+  height: 25px
+  border: 3px solid darken(variables.$color-secondary, 2%)
+  border-radius: 50%
+  border-top-color: variables.$color-primary
+  animation: spin 1s ease-in-out infinite
+  align-self: center
+

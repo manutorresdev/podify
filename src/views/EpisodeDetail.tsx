@@ -11,6 +11,8 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import useSWR from 'swr'
 import DOMPurify from 'dompurify'
+import Audio from '@components/podcast/Audio'
+import Spinner from '@components/Spinner'
 
 const SWRConfig = {
   revalidateOnFocus: false,
@@ -68,6 +70,15 @@ function Episode (props: Props) {
 
   const cleanDescription = DOMPurify.sanitize(parseDescription(description))
   const [played, setIsPlayed] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  const startLoading = () => {
+    setLoading(true)
+  }
+
+  const stopLoading = () => {
+    setLoading(false)
+  }
   return (
     <article data-testid='episode-detail' className='episode-details'>
       <div className='episode-header'>
@@ -79,26 +90,27 @@ function Episode (props: Props) {
         className='description'
         dangerouslySetInnerHTML={{ __html: cleanDescription }}
       />
-      {played
-        ? (
-          <audio controls className='player' autoPlay data-testid='episode-detail-audio'>
-            <source
-              src={`${episodeUrl}`}
-              type={`audio/${episodeFileExtension}`}
-            />
-          </audio>
-          )
-        : (
-          <button
-            data-testid='episode-detail-play-btn'
-            onClick={() => {
-              setIsPlayed(true)
-            }}
-          >
-            <PlayIcon />
-            Play
-          </button>
-          )}
+      {!played && (
+        <button
+          data-testid='podcast-detail-episode-play-btn'
+          onClick={() => {
+            setIsPlayed(true)
+          }}
+        >
+          <PlayIcon />
+          Play
+        </button>
+      )}
+      {played && (
+        <Audio
+          loading={loading}
+          startLoading={startLoading}
+          stopLoading={stopLoading}
+          episodeUrl={episodeUrl}
+          episodeFileExtension={episodeFileExtension}
+        />
+      )}
+      {loading && <Spinner />}
     </article>
   )
 }
