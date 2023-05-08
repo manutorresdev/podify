@@ -7,27 +7,44 @@
     color: variables.$color-tertiary
     display: flex
     flex-direction: column
-    padding: 20px
+    padding: 10px
     cursor: pointer
     transition: background-color 0.3s ease-in-out
-    width: 182px
+    width: 132px
+    max-height: 150px
     text-decoration: none
     &:hover
         background-color: darken(variables.$color-secondary, 8%)
     img
         border-radius: 5px
-        width: 200px
+        width: 108px
         align-self: center
         max-width: 100%
     h3
         color: variables.$color-primary
         font-weight: bold
-        font-size: 16px
+        margin: 10px 0px 0px 0px
+        font-size: 14px
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+    p
+        font-size: 12px
+        color: darken(variables.$color-tertiary, 20%)
+        margin: 0px
         overflow: hidden
         text-overflow: ellipsis
         white-space: nowrap
 
-    p
-        font-size: 14px
-        color: darken(variables.$color-tertiary, 20%)
-        margin: 0px
+@media (min-width: variables.$breakpoint-smaller)
+    .podcast-card
+        width: 182px
+        padding: 20px
+        max-height: 250px
+        img
+            width: 200px
+        h3
+            font-size: 16px
+            margin-bottom: 10px
+        p
+            font-size: 16px

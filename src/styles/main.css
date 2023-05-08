@@ -59,10 +59,11 @@ html, #root {
   color: #DCDCDC;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
-  width: 182px;
+  width: 132px;
+  max-height: 150px;
   text-decoration: none;
 }
 .podcast-card:hover {
@@ -70,24 +71,45 @@ html, #root {
 }
 .podcast-card img {
   border-radius: 5px;
-  width: 200px;
+  width: 108px;
   align-self: center;
   max-width: 100%;
 }
 .podcast-card h3 {
   color: #ff4057;
   font-weight: bold;
-  font-size: 16px;
+  margin: 10px 0px 0px 0px;
+  font-size: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 .podcast-card p {
-  font-size: 14px;
+  font-size: 12px;
   color: darkgray;
   margin: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
+@media (min-width: 512px) {
+  .podcast-card {
+    width: 182px;
+    padding: 20px;
+    max-height: 250px;
+  }
+  .podcast-card img {
+    width: 200px;
+  }
+  .podcast-card h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .podcast-card p {
+    font-size: 16px;
+  }
+}
 @keyframes pulse {
   0%, 100% {
     opacity: 1;
@@ -103,16 +125,26 @@ html, #root {
 }
 .podcast-list h2 {
   padding: 0px 12px;
+  text-align: center;
 }
 .podcast-list ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(124px, 1fr));
   gap: 20px;
   list-style: none;
   place-items: center;
-  padding: 0px;
+  padding: 0px 20px;
 }
 
+@media (min-width: 512px) {
+  .podcast-list h2 {
+    text-align: left;
+  }
+  .podcast-list ul {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 0px;
+  }
+}
 #podcast-list-skeleton .podcast-card .img {
   height: 180px;
   width: 180px;

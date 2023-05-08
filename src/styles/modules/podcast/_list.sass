@@ -4,13 +4,22 @@
 .podcast-list
     h2
         padding: 0px 12px
+        text-align: center
     ul
         display: grid
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+        grid-template-columns: repeat(auto-fill, minmax(124px, 1fr))
         gap: 20px
         list-style: none
         place-items: center
-        padding: 0px
+        padding: 0px 20px
+
+@media (min-width: variables.$breakpoint-smaller)
+    .podcast-list
+        h2
+            text-align: left
+        ul
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+            padding: 0px
 
 #podcast-list-skeleton
     .podcast-card
@@ -29,5 +38,3 @@
             width: 100%
             background-color: darken(variables.$color-secondary, 3%)
             margin-top: 10px
-
-
