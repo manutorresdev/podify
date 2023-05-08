@@ -16,3 +16,5 @@ export const ERROR = {
     message: 'Sorry, an error has occurred loading the podcast data.'
   }
 }
+// if production use production url
+export const URL = process.env.NODE_ENV === 'production' ? 'https://podify-iota.vercel.app/' : 'http://localhost:5173/'

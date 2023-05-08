@@ -1,4 +1,5 @@
 import { Podcast, RawPodcast } from '@_types/types'
+import { URL } from '@utils/constants'
 
 export function apiParser (content: RawPodcast[]): Podcast[] {
   return content.map((podcast: RawPodcast) => {
@@ -19,7 +20,7 @@ export function apiParser (content: RawPodcast[]): Podcast[] {
     const link = {
       attributes: {
         ...podcast.link.attributes,
-        href: `http://localhost:5173/podcast/${id.attributes['im:id']}`
+        href: `${URL}podcast/${id.attributes['im:id']}`
       }
     }
 
