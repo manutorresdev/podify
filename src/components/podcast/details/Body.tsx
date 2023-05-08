@@ -1,6 +1,6 @@
 import { PodcastDetailsProps } from '@_types/types'
 import { useState } from 'react'
-import PodcastEpisode from './Episode'
+import PodcastEpisode from './EpisodeCard'
 
 export default function PodcastDetailBody (props: PodcastDetailsProps) {
   const { episodes } = props.podcast

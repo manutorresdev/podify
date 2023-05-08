@@ -1,6 +1,6 @@
 import { Episode, Podcast, PodcastDetail } from '@_types/types'
 import { apiParser } from '.'
-import { isLastUpdateOneDayLong } from '@utils/helpers'
+import { calculateOneDayDiff } from '@utils/helpers'
 
 interface StorageItem {
   list: Podcast[]
@@ -9,10 +9,9 @@ interface StorageItem {
 
 export async function getPodcasts (): Promise<Podcast[]> {
   const data = localStorage.getItem('podcasts')
-
   if (data) {
     const { date, list } = JSON.parse(data) as StorageItem
-    const oneDayPassed = isLastUpdateOneDayLong(date)
+    const oneDayPassed = calculateOneDayDiff(date)
 
     if (oneDayPassed) {
       const fetchedPodcasts = await fetchPodcasts()
@@ -56,7 +55,7 @@ export async function getPodcastDetails ({ podcastId }: { podcastId: string }): 
   }
 }
 
-export async function getEpisodeById ({ podcastId, episodeId }: {
+export async function getEpisodeDetails ({ podcastId, episodeId }: {
   podcastId: string
   episodeId: string
 }): Promise<PodcastDetail> {
@@ -84,13 +83,13 @@ async function fetchPodcasts (): Promise<StorageItem> {
   }
 }
 
-async function fetchDetails ({ podcastId }: {podcastId: string}) {
+async function fetchDetails ({ podcastId }: { podcastId: string }) {
   const res = await fetch(`https://itunes.apple.com/lookup?id=${podcastId}`)
   const data = await res.json()
   return data.results[0]
 }
 
-async function fetchEpisodes ({ podcastId }: {podcastId: string}) {
+async function fetchEpisodes ({ podcastId }: { podcastId: string }) {
   const res = await fetch(`https://itunes.apple.com/lookup?id=${podcastId}&entity=podcastEpisode`)
   const data = await res.json()
   return data.results.slice(1)

@@ -1,9 +1,10 @@
-export function isLastUpdateOneDayLong (date: string): boolean {
+export function calculateOneDayDiff (date: string): boolean {
+  if (!date) return true
   const now = new Date()
   const lastUpdate = new Date(date)
   const diff = now.getTime() - lastUpdate.getTime()
   const hours = Math.floor(diff / 1000 / 60 / 60)
-  return hours < 24
+  return hours > 24
 }
 
 export function dateParser (date: string): string {
@@ -33,6 +34,9 @@ const MONTHS = {
 export function durationParser (duration: number): string {
   const hours = Math.floor(duration / 1000 / 60 / 60)
   const minutes = Math.floor(duration / 1000 / 60) % 60
+
+  if (hours === 0) return `${minutes} min`
+
   return `${hours} hr ${minutes} min`
 }
 

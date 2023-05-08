@@ -18,3 +18,8 @@ export const ERROR = {
 }
 // if production use production url
 export const URL = process.env.NODE_ENV === 'production' ? 'https://podify-iota.vercel.app/' : 'http://localhost:5173/'
+
+export const SWRConfig = {
+  revalidateOnFocus: false,
+  revalidateOnReconnect: false
+}

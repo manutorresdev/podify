@@ -1,9 +1,8 @@
 import { ERROR } from '@utils/constants'
 import { Link } from 'react-router-dom'
-
 interface Props {
-    status?: string;
-    message?: string;
+  status?: string;
+  message?: string;
 }
 
 export default function ErrorCard (props: Props) {
